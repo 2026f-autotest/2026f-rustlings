@@ -189,4 +189,3 @@ def provision(login, course_id, course):
         check_url = check_url.replace(repository, final_repository, 1)
         print("Preparation passed; formal repository published: " + final_repository, flush=True)
     return "https://github.com/" + final_repository, check_url
-
