@@ -22,7 +22,8 @@ fn temp_file() -> String {
         .filter(|c| c.is_alphanumeric())
         .collect();
 
-    format!("./temp_{}_{thread_id}", process::id())
+    fs::create_dir_all("tmp").expect("Failed to create temporary build directory");
+    format!("./tmp/temp_{}_{thread_id}", process::id())
 }
 
 // The mode of the exercise.
@@ -190,6 +191,10 @@ path = "{}.rs""#,
         .expect("Failed to run 'compile' command.");
 
         if cmd.status.success() {
+            if matches!(self.mode, Mode::BuildScript) {
+                print!("{}", String::from_utf8_lossy(&cmd.stdout));
+                eprint!("{}", String::from_utf8_lossy(&cmd.stderr));
+            }
             Ok(CompiledExercise {
                 exercise: self,
                 _handle: FileHandle,
