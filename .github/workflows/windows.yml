@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   windows:
-    if: github.repository == '2026f-autotest/2026f-rustlings'
+    if: github.repository == 'LearningOS/2026a-rustling'
     runs-on: windows-2025
     timeout-minutes: 20
     defaults:
