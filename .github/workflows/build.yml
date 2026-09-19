@@ -1,4 +1,4 @@
-name: 2026f-rustlings grading
+name: 2026a-rustling grading
 
 on:
   push:
@@ -18,7 +18,7 @@ jobs:
     name: Test exercises and calculate score
     if: >-
       !startsWith(github.event.repository.name, 'preparing-') &&
-      github.repository_owner == '2026f-autotest' && vars.STUDENT_GITHUB != ''
+      github.repository_owner == 'LearningOS' && vars.STUDENT_GITHUB != ''
     runs-on: ubuntu-24.04
     timeout-minutes: 45
     concurrency:
@@ -72,8 +72,8 @@ jobs:
       !startsWith(github.event.repository.name, 'preparing-') &&
       always() && !cancelled() && needs.grade.outputs.ready == 'true' &&
       needs.grade.outputs.artifact_id != '' &&
-      github.repository_owner == '2026f-autotest' &&
-      github.repository != '2026f-autotest/2026f-rustlings' &&
+      github.repository_owner == 'LearningOS' &&
+      github.repository != 'LearningOS/2026a-rustling' &&
       vars.STUDENT_GITHUB != '' && github.actor == vars.STUDENT_GITHUB
     runs-on: ubuntu-24.04
     timeout-minutes: 5
@@ -104,5 +104,5 @@ jobs:
       - name: Upload the assigned student's measured score
         env:
           STUDENT_GITHUB: ${{ vars.STUDENT_GITHUB }}
-          COURSE_TOKEN: ${{ secrets.OSCAMP_2026F_RUSTLINGS_TOKEN }}
+          COURSE_TOKEN: ${{ secrets.OSCAMP_2026A_RUSTLINGS_TOKEN }}
         run: python3 .github/scripts/publish.py

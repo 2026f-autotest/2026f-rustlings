@@ -13,7 +13,7 @@ from github_api import api, redact
 from provision import ORGANIZATION, provision
 
 COURSE_ID = "2084"
-COURSE = {"title": "导学阶段-Rust 语言基础", "template": "2026f-rustlings", "secret": "OSCAMP_2026F_RUSTLINGS_TOKEN", "branches": ["main"]}
+COURSE = {"title": "导学阶段-Rust 语言基础", "template": "2026a-rustling", "secret": "OSCAMP_2026A_RUSTLINGS_TOKEN", "branches": ["main"]}
 
 
 def read_students(arguments, path):

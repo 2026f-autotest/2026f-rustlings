@@ -1,12 +1,12 @@
 {
-  "name": "2026f-rustlings",
+  "name": "2026a-rustling",
   "title": "导学阶段-Rust 语言基础",
   "courseId": 2084,
   "totalScore": 110,
-  "secret": "OSCAMP_2026F_RUSTLINGS_TOKEN",
+  "secret": "OSCAMP_2026A_RUSTLINGS_TOKEN",
   "source": "LearningOS/2026s-rustling-classroom-template",
   "sourceCommit": "ade06927b84603689356bde886616dd40d3265de",
-  "organization": "2026f-autotest",
+  "organization": "LearningOS",
   "tests": [
     {
       "name": "intro2",
